@@ -5,14 +5,14 @@ import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screen/homeScreen';
-import {BlogProvider} from './src/context/blogContext';
+import {Provider} from './src/context/blogContext';
 // Navigation
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <BlogProvider>
+    <Provider>
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{headerShown: false}}
@@ -20,7 +20,7 @@ function App() {
           <Stack.Screen name="homescreen" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    </BlogProvider>
+    </Provider>
   );
 }
 
