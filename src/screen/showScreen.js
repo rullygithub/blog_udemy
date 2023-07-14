@@ -3,7 +3,7 @@ import React, {useContext} from 'react';
 import {Context} from '../context/blogContext';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const ShowScreen = ({route}) => {
+const ShowScreen = ({route, navigation}) => {
   const {state} = useContext(Context);
 
   const id = route.params.id;
@@ -16,7 +16,7 @@ const ShowScreen = ({route}) => {
         <Text>{blogPost.content}</Text>
       </View>
       <View>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.navigate('edit', {id})}>
             <Icon name="edit" size={20}/>
         </TouchableOpacity>
       </View>
